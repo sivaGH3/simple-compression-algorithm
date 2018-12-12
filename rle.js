@@ -36,7 +36,7 @@ class RLE {
 			return '';
 		});
 		//replace the count with the chars
-		str = str.replace(/(..|\n\n|\r\r)[0-9]+/g, match => {
+		str = str.replace(/(\S\S|\s\s)[0-9]+/g, match => {
 			const ch = match.charAt(0);
 			const num = parseInt(match.substring(2), 10);
 			let st = '';
