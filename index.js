@@ -23,10 +23,10 @@ if (command === 'encode') {
 	return;
 }
 const reader = fs.createReadStream(path.join(__dirname, readPath, fileName), {
-	highWaterMark: 128 * 1024
+	highWaterMark: 128 * 1024 *1024
 });
 const writer = fs.createWriteStream(path.join(__dirname, writePath, fileName), {
-	highWaterMark: 128 * 1024
+	highWaterMark: 128 * 1024 *1024
 });
 
 reader.on('error', () => {
